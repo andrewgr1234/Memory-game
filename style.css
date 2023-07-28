@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+body {
+  background-color: #3d5b9b;
+}
+
+#cards {
+  display: grid;
+  justify-content: center;
+  grid-gap: 16px;
+  grid-template-rows: repeat(3, 210px);
+  grid-template-columns: repeat(6, 140px);
+  border-width: 2px;
+  border-color: black;
+}
+
+#score,
+p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 15px;
+}
+
+button {
+  background-color: #001eff;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.card {
+  height: 210px;
+  width: 140px;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.front-image {
+  width: 130px;
+  height: 130px;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.back {
+  background-image: url(./card-back.png);
+  position: fixed;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 36px;
+  }
+  .cards {
+    grid-template-columns: repeat(3, 140px);
+    grid-template-rows: repeat(4, 210px);
+    grid-gap: 10px;
+  }
+
+  .card {
+    height: 210px;
+    width: 140px;
+  }
+
+  .actions button {
+    padding: 10px 20px;
+    font-size: 24px;
+  }
+}
