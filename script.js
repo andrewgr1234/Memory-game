@@ -3,10 +3,10 @@ let cards = [];
 let firstCard, secondCard;
 let lockBoard = false;
 let score = 0;
+let scoreBoard = document.getElementById("score");
+let mode = "normal";
 
-let scoreBoared = document.getElementById("score");
-
-scoreBoared.textContent = score;
+scoreBoard.textContent = score;
 
 fetch("./data/cards.json")
   .then((res) => res.json())
@@ -16,6 +16,11 @@ fetch("./data/cards.json")
     shuffleCards();
     genCards();
   });
+
+function setMode(newMode) {
+  mode = newMode;
+  restart();
+}
 
 function shuffleCards() {
   let currIndex = cards.length;
@@ -33,7 +38,35 @@ function shuffleCards() {
 }
 
 function genCards() {
-  for (let card of cards) {
+  let rows, columns;
+  let pairs = 0;
+  if (mode === "easy") {
+    pairs = 8;
+    rows = 2;
+    columns = 4;
+  } else if (mode === "normal") {
+    pairs = 18;
+    rows = 3;
+    columns = 6;
+  } else if (mode === "hard") {
+    pairs = 24;
+    rows = 4;
+    columns = 8;
+  } else if (mode === "extreme") {
+    pairs = 32;
+    rows = 5;
+    columns = 10;
+  }
+
+  cardsContainer.style.gridTemplateRows = `repeat(${rows}, 210px)`
+  cardsContainer.style.gridTemplateColumns = `repeat(${columns}, 210px)`
+
+  //grid-template-rows: repeat(3, 210px);
+  //grid-template-columns: repeat(6, 140px);
+  
+
+  for (let i = 0; i < pairs; i++) {
+    const card = cards[i];
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
     cardElement.setAttribute("data-name", card.name);
@@ -48,6 +81,9 @@ function genCards() {
     cardElement.addEventListener("touchstart", flipCard);
   }
 }
+
+// ... (rest of the code remains unchanged)
+
 
 function flipCard() {
   if (lockBoard) {
@@ -81,7 +117,7 @@ function disableCards() {
   secondCard.removeEventListener("touchstart", flipCard);
   score++;
   scoreBoared.textContent = score;
-  if(score === 9){
+  if (score === 9) {
     startConfetti()
   }
   unlockboard();

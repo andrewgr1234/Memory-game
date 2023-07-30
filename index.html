@@ -8,20 +8,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body onload="setMode('normal')">
   <header>
     <ul id="Navbar">
-      <li>
-        <a href=""><b></b></a>
+      <li id="easy">
+        <a onclick="setMode('easy')"><b>Easy Mode</b></a>
       </li>
-      <li>
-        <a href=""><b></b></a>
+      <li id="normal">
+        <a onclick="setMode('normal')"><b>Normal Mode</b></a>
       </li>
-      <li>
-        <a href=""><b></b></a>
+      <li id="hard">
+        <a onclick="setMode('hard')"><b>Hard Mode</b></a>
       </li>
-      <li>
-        <a href=""><b></b></a>
+      <li id="extreme">
+        <a onclick="setMode('extreme')"><b>Extreme Mode</b></a>
       </li>
     </ul>
   </header>

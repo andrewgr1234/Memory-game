@@ -2,14 +2,15 @@
 
 body {
   background-color: #3d5b9b;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 #cards {
   display: grid;
   justify-content: center;
   grid-gap: 16px;
-  grid-template-rows: repeat(3, 210px);
-  grid-template-columns: repeat(6, 140px);
   border-width: 2px;
   border-color: black;
 }
@@ -93,6 +94,16 @@ ul#Navbar {
 ul#Navbar li {
   display: inline-block;
   margin-right: 20px;
+}
+
+ul#Navbar li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+ul#Navbar:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 1000px) {
