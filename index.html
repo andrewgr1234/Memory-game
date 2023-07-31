@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Memory Card Game</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <header>
+      <ul id="Navbar">
+        <li id="normal">
+          <a onclick="setMode('normal')"><b>Normal Mode</b></a>
+        </li>
+        <li id="hard">
+          <a onclick="setMode('hard')"><b>Hard Mode</b></a>
+        </li>
+        <li id="extreme">
+          <a onclick="setMode('extreme')"><b>Extreme Mode</b></a>
+        </li>
+      </ul>
+    </header>
 
-<body onload="setMode('normal')">
-  <header>
-    <ul id="Navbar">
-      <li id="easy">
-        <a onclick="setMode('easy')"><b>Easy Mode</b></a>
-      </li>
-      <li id="normal">
-        <a onclick="setMode('normal')"><b>Normal Mode</b></a>
-      </li>
-      <li id="hard">
-        <a onclick="setMode('hard')"><b>Hard Mode</b></a>
-      </li>
-      <li id="extreme">
-        <a onclick="setMode('extreme')"><b>Extreme Mode</b></a>
-      </li>
-    </ul>
-  </header>
+    <center>
+      <div id="actions">
+        <p>Score: <span id="score"> </span></p>
 
-  <center>
-    <h1>very cool game</h1>
-  </center>
+        <button onclick="restart()">Restart</button>
+      </div>
+      <br />
+      <br />
+    </center>
 
-  <div id="actions">
-    <p>Score: <span id="score"> </span></p>
-
-    <button onclick="restart()">Restart</button>
-  </div>
-
-  <div id="cards"></div>
-</body>
-<script src="confetti.js"></script>
-<script src="script.js"></script>
-
+    <div id="cards"></div>
+  </body>
+  <script src="confetti.js"></script>
+  <script src="script.js"></script>
 </html>

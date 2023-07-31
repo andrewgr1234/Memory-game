@@ -7,6 +7,11 @@ body {
   padding: 0;
 }
 
+.actions{
+  align-items: center;
+  text-align: center;
+}
+
 #cards {
   display: grid;
   justify-content: center;

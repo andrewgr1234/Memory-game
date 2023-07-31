@@ -1,4 +1,5 @@
 const cardsContainer = document.getElementById("cards");
+const card = document.getElementsByClassName("card");
 let cards = [];
 let firstCard, secondCard;
 let lockBoard = false;
@@ -17,11 +18,6 @@ fetch("./data/cards.json")
     genCards();
   });
 
-function setMode(newMode) {
-  mode = newMode;
-  restart();
-}
-
 function shuffleCards() {
   let currIndex = cards.length;
   let randomIndex;
@@ -34,39 +30,74 @@ function shuffleCards() {
     tempValue = cards[currIndex];
     cards[currIndex] = cards[randomIndex];
     cards[randomIndex] = tempValue;
+    tempValue = cards[currIndex];
+    cards[currIndex] = cards[randomIndex];
+    cards[randomIndex] = tempValue;
+    tempValue = cards[currIndex];
+    cards[currIndex] = cards[randomIndex];
+    cards[randomIndex] = tempValue;
+    tempValue = cards[currIndex];
+    cards[currIndex] = cards[randomIndex];
+    cards[randomIndex] = tempValue;
+    tempValue = cards[currIndex];
+    cards[currIndex] = cards[randomIndex];
+    cards[randomIndex] = tempValue;
   }
 }
 
+function initGame() {
+  shuffleCards();
+  unlockboard();
+  genCards();
+  stopConfetti();
+  score = 0;
+  scoreBoard.textContent = score;
+}
+
+function setMode(newMode) {
+  mode = newMode;
+  initGame();
+}
+
 function genCards() {
-  let rows, columns;
+  let rows, columns, size;
   let pairs = 0;
-  if (mode === "easy") {
-    pairs = 8;
-    rows = 2;
-    columns = 4;
-  } else if (mode === "normal") {
-    pairs = 18;
+  let selectedCards = [];
+  const maxPairs = 27;
+
+  if (mode === "normal") {
+    pairs = 9;
     rows = 3;
     columns = 6;
+    size = 210;
   } else if (mode === "hard") {
-    pairs = 24;
-    rows = 4;
+    pairs = 12;
+    rows = 5;
     columns = 8;
+    size = 180;
   } else if (mode === "extreme") {
-    pairs = 32;
+    pairs = 27;
     rows = 5;
     columns = 10;
+    size = 150;
+  }
+  while (selectedCards.length < pairs && selectedCards.length < maxPairs) {
+    const randomIndex = Math.floor(Math.random() * cards.length);
+    const card = cards[randomIndex];
+    if (!selectedCards.includes(card)) {
+      selectedCards.push(card);
+    }
   }
 
-  cardsContainer.style.gridTemplateRows = `repeat(${rows}, 210px)`
-  cardsContainer.style.gridTemplateColumns = `repeat(${columns}, 210px)`
+  const pairsArray = selectedCards.concat(selectedCards);
 
-  //grid-template-rows: repeat(3, 210px);
-  //grid-template-columns: repeat(6, 140px);
-  
+  cardsContainer.style.gridTemplateRows = `repeat(${rows}, 210px)`;
+  cardsContainer.style.gridTemplateColumns = `repeat(${columns}, ${size}px)`;
 
-  for (let i = 0; i < pairs; i++) {
-    const card = cards[i];
+  cardsContainer.innerHTML = "";
+
+  for (let i = 0; i < pairsArray.length; i++) {
+    const card = pairsArray[i];
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
     cardElement.setAttribute("data-name", card.name);
@@ -81,9 +112,6 @@ function genCards() {
     cardElement.addEventListener("touchstart", flipCard);
   }
 }
-
-// ... (rest of the code remains unchanged)
-
 
 function flipCard() {
   if (lockBoard) {
@@ -116,9 +144,9 @@ function disableCards() {
   secondCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("touchstart", flipCard);
   score++;
-  scoreBoared.textContent = score;
+  scoreBoard.textContent = score;
   if (score === 9) {
-    startConfetti()
+    startConfetti();
   }
   unlockboard();
 }
@@ -140,9 +168,10 @@ function unlockboard() {
 function restart() {
   shuffleCards();
   unlockboard();
-  score = 0;
-  scoreBoared.textContent = score;
-  cardsContainer.innerHTML = "";
   genCards();
-  stopConfetti()
+  stopConfetti();
+  initGame();
+  score = 0;
+  scoreBoard.textContent = score;
+  cardsContainer.innerHTML = "";
 }

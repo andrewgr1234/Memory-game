@@ -1,102 +1,110 @@
 [
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    },
-    {
-        "image": "assets/",
-        "name": ""
-    }
+  {
+    "image": "assets/bee.png",
+    "name": "bee"
+  },
+  {
+    "image": "assets/bird.png",
+    "name": "bird"
+  },
+  {
+    "image": "assets/butterfly.png",
+    "name": "butterfly"
+  },
+  {
+    "image": "assets/camel.png",
+    "name": "camel"
+  },
+  {
+    "image": "assets/capybara.png",
+    "name": "capybara"
+  },
+  {
+    "image": "assets/cat.png",
+    "name": "cat"
+  },
+  {
+    "image": "assets/chicken.png",
+    "name": "chicken"
+  },
+  {
+    "image": "assets/crab.png",
+    "name": "crab"
+  },
+  {
+    "image": "assets/dog.png",
+    "name": "dog"
+  },
+  {
+    "image": "assets/dolphin.png",
+    "name": "dolphin"
+  },
+  {
+    "image": "assets/duck.png",
+    "name": "duck"
+  },
+  {
+    "image": "assets/elephant.png",
+    "name": "elephant"
+  },
+  {
+    "image": "assets/frog.png",
+    "name": "frog"
+  },
+  {
+    "image": "assets/giraff.png",
+    "name": "giraff"
+  },
+  {
+    "image": "assets/gorilla.png",
+    "name": "gorilla"
+  },
+  {
+    "image": "assets/headchog.png",
+    "name": "headchog"
+  },
+  {
+    "image": "assets/horse.png",
+    "name": "horse"
+  },
+  {
+    "image": "assets/ladybug.png",
+    "name": "ladybug"
+  },
+  {
+    "image": "assets/lama.png",
+    "name": "lama"
+  },
+  {
+    "image": "assets/lion.png",
+    "name": "lion"
+  },
+  {
+    "image": "assets/nemo.png",
+    "name": "nemo"
+  },
+  {
+    "image": "assets/panda.png",
+    "name": "panda"
+  },
+  {
+    "image": "assets/penguin.png",
+    "name": "panguin"
+  },
+  {
+    "image": "assets/pig.png",
+    "name": "pig"
+  },
+  {
+    "image": "assets/pony.png",
+    "name": "pony"
+  },
+  {
+    "image": "assets/rabbit.png",
+    "name": "rabbit"
+  },
+  {
+    "image": "assets/turtle.png",
+    "name": "turtle"
+  }
 ]
